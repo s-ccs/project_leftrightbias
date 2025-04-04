@@ -8,7 +8,7 @@
 // #set par.line(numbering: "1")
 //-> will work in next release ("soon")
 #show: arkheion.with(
-  title: "Horizontal, vertical and diagonal biases in first fixation location",
+  title: "Overt Spatial Biases in a concurrent 2-AFC task",
   authors: (
 
     (name: "Maximilian Dominik Bernhardt",
@@ -35,7 +35,12 @@
     email: "\ntitus.von-der-malsburg@ling.uni-stuttgart.de", 
     affiliation: "University of Stuttgart", 
     orcid: "0000-0001-5925-5145"),
-    
+
+    (name: "José Ossandon", 
+    email: "jose.ossandon@uni-hamburg.de", 
+    affiliation: "University of Hamburg", 
+    orcid: "0000-0002-2539-390X"),
+
     (name: "Benedikt Ehinger", 
     email: "benedikt.ehinger@vis.uni-stuttgart.de", 
     affiliation: "University of Stuttgart - SimTech", 
@@ -44,7 +49,9 @@
   // Insert your abstract after the colon, wrapped in brackets.
   // Example: `abstract: [This is my abstract...]`
   abstract: [
-   Here goes the abstract
+    (abstract for ecvp)
+    
+   A common task to investigate early visual attention is to provide participants with a choice between two stimuli. When such 2-AFC tasks allow for eye-movements for assessing overt attention, reports emerged that indicated a spatial bias towards first saccading the left stimulus, ranging from 65% up to 90%. Here, we replicate this finding and extend it to non-horizontal stimulus arrangements. In an eye-tracking study (n=23), we 1) replicate the left-right bias with ~80% left-preference, 2) describe a novel vertical bias with 80% up-preference, and 3) find a specific diagonal placement of the stimuli that shows no spatial bias. Especially the latter finding allows improving the dynamic range (and hence statistical power) in investigations of early attentional effects. Based on a Bradley-Terry logistic regression simulation, we theoretically could gain small (~5%, at 65% bias) to decent (~30%, at ~80% bias) to large (~300% at ~90%) power improvements - just by changing the spatial layout of the two stimuli. Taken together, we show here both, a new description of spatial biases between two stimuli, and a powerful methodological twist to the 2AFC to improve attentional research methodology.
   ],
   keywords: ("left-right bias", "spatial bias", "2-AFC", "eye tracking", "attention"),
   date: "4th December, 2024",
@@ -67,25 +74,32 @@
 
 #pagebreak()
 = Introduction
-Human perception is inherently selective, with certain visual stimuli capturing attention more readily than others. When two stimuli are presented simultaneously, the subject must automatically fixate their gaze on one of them. 
+Human perception is inherently selective, with certain visual stimuli capturing attention more readily than others. When presented with two stimuli simultaneously, subjects need to choose which to sample first. Such priority has been extensively exploited to provide insights into the attentional system of healthy (cite dot-probe), as well as in patients @cludius_attentional_2019 (XXX others). This effect is related to the 2-AFC task, crucially with 2AFC tasks, a final decision is investigated, not the first deployment of attention.
 
-However, these fixations are not always a coincidence. Several factors influence human perception, determining which of two images is looked at first and thus creating a bias. One such influencing factor is the spatial arrangement of the two images in question. In a study by Hernandez-Garcia et al. (2020, p. 13), for instance, a bias towards the left side was observed in 65% of cases. Other research findings indicate that 93% of fixations occur initially on the stimuli on the left side, thereby corroborating the left bias (Cludius et al., 2017, pp. 34-38). The results demonstrate a specific asymmetry in human perception, whereby a particular stimulus is perceived first in specific spatial configurations. This bias may have multiple underlying causes, including the observed difference between right-handed and left-handed individuals, with the former exhibiting a less pronounced bias, and the potential influence of hemispheric lateralization in high-level brain regions (Ossandon et al., 2014). 
+These initial decisions are not only influenced by the stimuli themselves, but also by the spatial arrangement, independent of the content. The most common arrangement is a horizontal one, one left and one right of a central fixation. In cases a spatial bias was explicitly reported, we found a bias of 65% @hernandez-garcia_global_2020 up to 93% of fixations @cludius_attentional_2019 to land on the stimuli on the left side. 
 
-The aforementioned findings will be employed and integrated into this experiment with the objective of formulating further assertions regarding the spatial configuration of stimuli and the ensuing biases. Furthermore, the experiment is designed to ascertain the influence of a diagonal arrangement, specifically a combination of left-right and top-bottom arrangements, on the left bias. It is possible that this will result in either reinforcement or negation, or alternatively, a counterbalancing effect. 
+Another lateral bias has been described, but within a single image, not between two images. Here a spatial bias to first explore the left side of an image in the initial 2-3 seconds has been described @ossandon_spatial_2014, @spotorno_whats_2025, @foulsham_tom_stable_2018 .
 
-The aim is to demonstrate whether these findings are consistent and whether new results can be obtained. This also represents the research question, namely, "Does diagonal positioning of stimuli eliminate the left bias in viewing images?".  
+Thus, similarly to the single-image bias, the two-stimulus left bias will likely reflect multiple underlying causes, ranging  from handedness, to reading direction. 
 
-Two hypotheses were formulated in advance to ensure that the experiment could be conducted in a targeted manner. The initial hypothesis is that individuals will at the outset direct their gaze towards the left-hand image, even when presented with images positioned diagonally relative to one another. The second hypothesis is that a stimulus placed at the bottom left is perceived as more appealing than a stimulus placed at the top right and is therefore fixated upon first. 
+These biases are rarely discussed or referenced because balancing the conditions over the left and right side, often removes them. Nevertheless, if extreme biases such as >90% can occur, they greatly diminish the operational range of any attentional biases.
 
-To investigate the research question and the hypotheses, the independent measures are the selection and position of the stimuli, and the dependent measures are the initial fixations.
+In this study, we replicate and investigate this bias not only for the left-right arrangement, but also for diagonal and vertical arrangements. Earlier studies have indeed used such arrangements (specifically the right side up, left side down), to defend against the left-right bias @nummenmaa_eye_2006, @muller_celina_l_through_2025. The argument from their study is, that an upper-lower bias, counteracting the left-right bias in their specific arrangement. Unfortunately, to our knowledge, they state this without any explicit test or reference.
+
+To investigate on a theoretical level this spatial bias in vision, and on an applied side, whether diagonally placing stimuli can counteract such a bias, we placed stimuli in opposition to the central fixation dot, arranged in 6 different positions. The stimuli were artificially generated textures, largely devoid of content, nevertheless due to a distractor-detection task, subjects were encouraged to look at both stimuli.
+
+To preview our results, indeed a diagonal placement at 2/7 o'clock resulted in no spatial bias, whereas all other arrangements were biased towards the left (or top in case of the 6/12 o'clock arrangement).
 
  
 = Experimental Methods
- In this experiment, conducted within a controlled laboratory environment, a total of 23 participants were included in the study. The age demographic of the participants was as follows: 20 - 30 years (n = 22), 50 - 60 years (n = 1), while the gender distribution was as follows: male (n = 20), female (n = 3). All participants were raised in a culture where the Latin script is utilized and reading is conducted from left to right.
+The experiment was conducted in a controlled laboratory environment, within a student-project. A total of 23 participants (mean age =, range = 20 - 60, 3 female, 20 male, 0 diverse) were included in the study. All participants were raised in a culture where the Latin script is utilized and reading is conducted from left to right.
+//The age demographic of the participants was as follows: 20 - 30 years (n = 22), 50 - 60 years (n = 1), while the gender distribution was as follows: male (n = 20), female (n = 3). 
+
+We used grayscale, high contrast texture stimuli (see Figure 1). All pictures were created with stable diffusion using Leonardo.AI leonardo.ai and ChatGPT, with a size of 1024x1024px. To create the stimuli, the following prompts were used: "Please generate simple images of different textures without striking content in black and white/Please generate simple images of different natural textures like wood or garn without striking content in black and white." Using  Opensesame 4.0 @mathot_opensesame_2012 @mathot_conducting_2022, PyGaze @dalmaijer_pygaze_2014 and PsychoPy @peirce_psychopy2_2019, the stimuli were displayed with 204x204px with a 28.3" LCD monitor (resolution: 1920x1080 pixels, height: 527mm, width: 296,5mm) with participants seated 60 cm in front of the screen, resulting in a visual angle of around 3.02 dva per stimulus. To monitor the eye, we used a GazePoint GP3 HD at 240Hz.
  
- The stimuli employed in the experiment comprised grayscale pictures of low contrast and without striking content, in order to avoid any potential negative effects on the results (see Figure 1). All pictures were created with stable diffusion technology through Leonardo.AI (Quelle in .bib hinzufügen, https://app.leonardo.ai) and ChatGPT (Quelle in .bib hinzufügen, https://chatgpt.com) and had the size 1024x1024 pixels. During the execution they were displayed with factor 0.2 on a 28,3 inch Full HD screen (resolution: 1920x1080 pixels, height: 527mm, width: 296,5mm) with participants seated 60 cm in front of the screen, leading to a visual angle of around 3.02 degrees. The eye tracker used during the experiment was the GazePoint GP3 HD in combination with OpenSesame 4.0 (Quelle in .bib hinzufügen) to gather participant data.
+The stimuli pairs were placed 8.37 dva away from the center, always in opposition to each other for 5s. After the stimulus display, a fixation period at the center fixation cross was enforced for 1.5s. In total, 48 trials were recorded per subject, at 6 locations. Even though we do not expect any low-level influences in our study design, all stimuli-pairs were presented counter-balanced for location.
  
- In an effort to maintain participant focus and prevent distraction, the subjects were assigned a counting task, with counting the number of circles displayed in the stimuli being the objective. It was ensured that all images featured either a circle or a decagon with reduced transparency to maintain visual engagement. As the number of circles was randomly selected prior to each trial and differed between participants, the answers were collected verbally and not included in the research.
+To maintain participant focus, we added an easy distractor detection task. On each individual stimulus, we overlaid either a circle or a polygon contour. The participants distractor task was to count the number of circles and report them verbally.
 
   #figure(
   image("stimuli_display.png", width: 80%),
@@ -93,40 +107,52 @@ To investigate the research question and the hypotheses, the independent measure
     Experimental design including examples of stimuli displayed during the experiment.
   ],
 )
-
- The study was conducted using a within-subject design. This approach involved the presentation of the same form of treatment to each participant, resulting in the display of 48 pairs of stimuli during each experiment. 
- 
- During the execution phase of the experiment, subjects were presented with pairs of stimuli for a duration of 5000 milliseconds, derived from twelve predefined locations. These locations were chosen on the basis of the hours of a clock (Figure 1). It was ensured that only opposite pairs were displayed (e.g. nine and three). Following the presentation of each pair, participants were required to refocus their attention on the central fixation dot, thus revealing the subsequent stimuli. 
- 
- To mitigate any potential interference with the results, a counterbalancing procedure was implemented for each pair of images. More specifically, if image A was initially displayed at position nine and image B at position three, then image B was also displayed at position three and image A at position nine later during the experiment. This resulted in a total of 48 executions, consisting of 24 unique trials with 24 trials of counterbalancing.
  
  = Analysis Methods
 
- To assess the experiment, a complete analysis pipeline that automatically generates the necessary results for the given participant datasets was built. In the data preprocessing the first fixations are extracted, and the fixations within a certain threshold around the stimuli are analysed to get a list with the total number of first fixations for every stimulus position from one to twelve. Furthermore the time is normalized.
- After preprocessing the data, fixations are being counted by extracting all last fixations together with their corresponding coordinates and compared to which stimuli they belong to ensure they are on a stimulus and therefore can be considered. Afterwards for the visualization of the results, multiple plots have been made in total.  The counts for the twelve different stimuli positions are compared and the most important plot shows the percentage of first fixations by stimuli pairs.
+Based on the location-based fixation detection algorithm provided by Gaze-Point, we extracted which stimulus was first fixated, and the corresponding saccade reaction times. To synchronize the experiment, we used the OpenSesame/PyGaze log-function, which allows synchronization per sample (thus adding a minor jitter of +-2ms).
 
- At last, the column containing all the logs during the experiment is evaluated. For this, logs have been added to the implementation of the experiment in OpenSesame to be able to read out the timing of occurring events afterwards. All not complete log entries were not used for the final evaluation of the experiment. 
+We calculate mean response, and 20%-winsorized means reaction times, per spatial arrangements, per subject. We consequently use 20% winsorized mean bootstrapping to calculate confidence intervals. Reaction times were only used if a spatial location was chosen first, leaving us with little to no data for some conditions with strong choice bias. Given the visible size of the choice effects, we deem no further comparison between conditions necessary.
+
+// Furthermore the time is normalized.
+ //After preprocessing the data, fixations are being counted by extracting all last fixations together with their corresponding coordinates and compared to which stimuli they belong to ensure they are on a stimulus and therefore can be considered. Afterwards for the visualization of the results, multiple plots have been made in total.  The counts for the twelve different stimuli positions are compared and the most important plot shows the percentage of first fixations by stimuli pairs.
+
+ //At last, the column containing all the logs during the experiment is evaluated. For this, logs have been added to the implementation of the experiment in OpenSesame to be able to read out the timing of occurring events afterwards. All not complete log entries were not used for the final evaluation of the experiment. 
 
 = Results
-This study aimed to examine the presence of a left view bias in visual attention using eye-tracking data. Participants predominantly made their first fixations on images located to the left of the fixation, which reveals a consistent left view bias. This was consistent across various positioning of the stimuli, supporting the hypothesis of a left view bias with approximately 74% of all first fixations directed towards the left image. Additionally, the vertical positioning of stimuli influenced visual attention. Stimuli positioned at the same height or above the fixation dot received higher attention compared to those below. The stimuli placed at the bottom right received the least attention, suggesting a combined effect of left view bias and vertical positioning on visual attention. 
- 
+We examined spatial biases between simultaneously depicting two images using eye-tracking. Participants predominantly made their first fixations on images located to the left of the fixation, following the left view bias described in the literature. In the typical 3/9 o'clock horizontal presentation condition, we observed on average 79.78% left-first fixations ($"CI"_95: [69.41-88.90]%$). We further find a similar sized top-bottom bias towards the top stimulus (81,42%,$"CI"_95:[69.88-90.84]%$). Only when the stimuli were presented in the 1/7 o'clock position, we observed no bias (50.00%,$"CI"_95:[37.50-61.96]%$)).
+
 #figure(
-  image("condition_distribution_results.png", width: 40%),
+   image("condition_distribution_results.png", width: 80%),
   caption: [
-    Individual distribution of participants and mean of first fixations.
+    Individual distribution of participants and mean of first fixations and reaction times.
   ],
 )
 
-Furthermore, this shows a clear preference for left-side fixations across various pairs of stimuli, reinforcing the left view bias observed in the radial histogram. The left fixations dominate across most pairs, especially from "seven" to "eleven," whereas right fixations are notably fewer.  These findings confirm the presence of a left view bias in visual attention. Even with diagonal positioning, participants showed a significant tendency to fixate on images to the left of the fixation dot first. The vertical positioning modulated this bias to the upper part of the screen, with images at the same height or above the fixation dot attracting more attention. This supports the Hypotheses that visual attention is influenced by a spatial bias that favours the left side, as well as by vertical positioning, which prioritizes higher-placed stimuli.
+We did not find obvious patterns in the reaction times across spatial layouts.
 
 = Discussion
-This study investigated whether the left-bias could be replicated and additionally if diagonal positioning of stimuli eliminated the left-bias in visual attention. The results strongly supported the first hypothesis (H1), indicating a consistent left-bias, even with diagonal positioning of stimuli. Approximately 74% of all first fixations were directed toward the left image, corroborating previous findings (e.g., Hernandez-Garcia et al., 2020; Cludius et al., 2019).
-The second hypothesis (H2) was only partially supported. In pairs where one stimulus was positioned at the bottom-left and the other at the top-right, first fixations were nearly equal, suggesting that diagonal positioning may occasionally neutralize the left-bias. However, this was an exception; overall, the left-bias remained dominant, interacting with vertical positioning to show a preference for top-left stimuli.
-The study's limitations include a small, culturally homogeneous sample size and a narrow age range, which may limit generalizability. Challenges included technical issues, such as fixation dot malfunctions, scheduling conflicts, and a Y-axis orientation error, which led to initial misinterpretation of the data.
-Future research should involve larger, more diverse samples and varied stimuli to validate the findings and assess cultural influences. 
+We replicate the left-bias spatial bias between two simultaneously displayed figures. We further demonstrate, that diagonal positioning of stimuli can eliminate such a left-bias, increasing the dynamic range available for actual experimental manipulations to influence the early attentional stage. 
+
+== Limitations
+The study has several limitations to their generalizability. 
+We used a small, culturally homogeneous sample size with a narrow age range. Subjects were WEIRD (western, educated, industrialized, rich and democratic), mostly right-handed and consisted only of left-to-right readers.
+
+The stimuli were limited to natural black and white textures to provide no strong  lower-level saliency feature. The influence of stimulus content, at least for the left-right bias, was investigated in @hernandez-garcia_global_2020.
+
+Besides the stimulus contents, we did not manipulate the distance and sizes of the stimuli.
+
+
+== Relation to single image spatial biases
+@durgin_upper-left_2008 found an upper-left bias
+
+== Relation to dot-probe task
+The popular dot-probe task is commonly used in clinical settings to investigate attentional biases. They briefly present two stimuli left and right of the fixation cross. They typically do not use eye-tracking, thus to approximate attention deployment, they cannot use first fixation location, but rather present a probe at one of the locations. This probe is supposedly faster processed (and thus reaction is faster), if attention is already employed at that location, allowing for inference to the underlying experimental manipulations.
+
+It is therefore no stretch to wonder if the dot probe suffers from the same spatial bias as the experiment we provide here in detail. XXX
 
 = Conclusion
-This study confirmed a robust left-bias in visual attention, consistent across stimuli, even with diagonal positioning, and highlighted the interplay with vertical positioning, favoring top-left stimuli. While occasional neutralization of the left-bias was observed, its dominance underscores its reliability. The results emphasize the need for future research with diverse populations to broaden applicability, while also highlighting the value of rigorous pretesting and careful coordination in experimental design.
+The left-bias in visual attention can be detrimental to first-fixation choice analysis. We show that slightly rotating the stimulus layout, so that the right stimulus is elevated and the left lowered, this bias can be counteracted. Therefore, we recommend to use diagonal stimulus placements whenever investigating choice-biases.
 
 = Conflicts of Interest
 
@@ -134,11 +160,11 @@ The authors have no conflicts of interest to declare. All co-authors have seen a
 
 = Data and Code Availability
 
-All code is publicly available at https://github.com/PatrickEbner/2024-SoSe_EyeTracking.git.
+All code is publicly available at https://github.com/s-ccs/project_leftrightbias https://github.com/PatrickEbner/2024-SoSe_EyeTracking.git.
 
 = Author Contributions
 
-The preceding research was conducted as an semester project during the Acquisition and Analysis of Eye-Tracking Data course at the University of Stuttgart, led by Benedikt Ehinger, Titus von der Malsburg and Judith Schepers. All five listed members contributed to the successful completion of the project.
+The project was conducted as a semester project of the "Acquisition and Analysis of Eye-Tracking Data" M.Sc. course at the University of Stuttgart.
 
 - #underline[Maximilian Bernhardt]: Conceptualization; Methodology; Software; Formal analysis (simulations); Data Curation; Writing - Original Draft; Visualization
 
@@ -150,7 +176,7 @@ The preceding research was conducted as an semester project during the Acquisiti
 
 - #underline[Enno Schwenk]: Conceptualization; Methodology; Software; Formal analysis (simulations); Data Curation; Writing - Original Draft; Visualization
 
-- #underline[Titus von der Malsburg]: Analysis; Writing - Review & Editing
+- #underline[Titus von der Malsburg]: Analysis; Writing - Review & Editing; Funding acquisition
 
 - #underline[Judith Schepers]: Analysis; Writing - Review & Editing
 
@@ -162,5 +188,7 @@ Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in 
 
 #set par(justify: true, first-line-indent: 0pt);
 
-#bibliography(title:"Bibliography", style:"american-psychological-association", "2024bibliothek.bib")
+
+// send behinger an email with your zotero to get access to the group
+#bibliography(title:"Bibliography", style:"american-psychological-association", "zotero_shared.bib")
 
