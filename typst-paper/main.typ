@@ -51,7 +51,7 @@
   abstract: [
     (abstract for ecvp)
     
-   A common task to investigate early visual attention is to provide participants with a choice between two stimuli. When such 2-AFC tasks allow for eye-movements for assessing overt attention, reports emerged that indicated a spatial bias towards first saccading the left stimulus, ranging from 65% up to 90%. Here, we replicate this finding and extend it to non-horizontal stimulus arrangements. In an eye-tracking study (n=23), we 1) replicate the left-right bias with ~80% left-preference, 2) describe a novel vertical bias with 80% up-preference, and 3) find a specific diagonal placement of the stimuli that shows no spatial bias. Especially the latter finding allows improving the dynamic range (and hence statistical power) in investigations of early attentional effects. Based on a Bradley-Terry logistic regression simulation, we theoretically could gain small (~5%, at 65% bias) to decent (~30%, at ~80% bias) to large (~300% at ~90%) power improvements - just by changing the spatial layout of the two stimuli. Taken together, we show here both, a new description of spatial biases between two stimuli, and a powerful methodological twist to the 2AFC to improve attentional research methodology.
+   A common task to investigate early visual attention is to provide participants with a choice between two stimuli. When such 2-AFC tasks allow for eye-movements in order to assess overt attention, reports emerged that indicated a spatial bias towards first saccading the left stimulus, ranging from \~65% up to \~90%. Here, we replicate this finding and extend it to non-horizontal stimulus arrangements. In an eye-tracking study (n=23), we (1) replicate the left-right bias with \~80% left-preference, (2) describe a novel vertical bias with an \~80% up-preference, and (3) find a specific diagonal placement of the stimuli that shows no spatial bias. The third finding suggests, that we can improve the dynamic range (and hence statistical power) in investigations of early attentional effects. Based on a Bradley-Terry logistic regression simulation, we theoretically could gain small (\~5%, at \~65% bias) to decent (\~30%, at \~80% bias) to large (\~300% at \~90%) power improvements — simply by changing the spatial arrangement of the two stimuli. Taken together, we provide a better description of spatial biases between two stimuli, and present a practical modification to the 2-AFC paradigm that can substantially improve the power of visual attention studies.
   ],
   keywords: ("left-right bias", "spatial bias", "2-AFC", "eye tracking", "attention"),
   date: "4th December, 2024",
@@ -92,7 +92,7 @@ To preview our results, indeed a diagonal placement at 2/7 o'clock resulted in n
 
  
 = Experimental Methods
-The experiment was conducted in a controlled laboratory environment, within a student-project. A total of 23 participants (mean age =, range = 20 - 60, 3 female, 20 male, 0 diverse) were included in the study. All participants were raised in a culture where the Latin script is utilized and reading is conducted from left to right.
+The experiment was conducted in a controlled laboratory environment, within a student-project. A total of 23 participants (age range 20 - 60 (more detailed information was not recorded), 3 female, 20 male, 0 diverse) were included in the study. All participants were raised in a culture where the Latin script is utilized and reading is conducted from left to right.
 //The age demographic of the participants was as follows: 20 - 30 years (n = 22), 50 - 60 years (n = 1), while the gender distribution was as follows: male (n = 20), female (n = 3). 
 
 We used grayscale, high contrast texture stimuli (see Figure 1). All pictures were created with stable diffusion using Leonardo.AI leonardo.ai and ChatGPT, with a size of 1024x1024px. To create the stimuli, the following prompts were used: "Please generate simple images of different textures without striking content in black and white/Please generate simple images of different natural textures like wood or garn without striking content in black and white." Using  Opensesame 4.0 @mathot_opensesame_2012 @mathot_conducting_2022, PyGaze @dalmaijer_pygaze_2014 and PsychoPy @peirce_psychopy2_2019, the stimuli were displayed with 204x204px with a 28.3" LCD monitor (resolution: 1920x1080 pixels, height: 527mm, width: 296,5mm) with participants seated 60 cm in front of the screen, resulting in a visual angle of around 3.02 dva per stimulus. To monitor the eye, we used a GazePoint GP3 HD at 240Hz.
@@ -114,13 +114,9 @@ Based on the location-based fixation detection algorithm provided by Gaze-Point,
 
 We calculate mean response, and 20%-winsorized means reaction times, per spatial arrangements, per subject. We consequently use 20% winsorized mean bootstrapping to calculate confidence intervals. Reaction times were only used if a spatial location was chosen first, leaving us with little to no data for some conditions with strong choice bias. Given the visible size of the choice effects, we deem no further comparison between conditions necessary.
 
-// Furthermore the time is normalized.
- //After preprocessing the data, fixations are being counted by extracting all last fixations together with their corresponding coordinates and compared to which stimuli they belong to ensure they are on a stimulus and therefore can be considered. Afterwards for the visualization of the results, multiple plots have been made in total.  The counts for the twelve different stimuli positions are compared and the most important plot shows the percentage of first fixations by stimuli pairs.
-
- //At last, the column containing all the logs during the experiment is evaluated. For this, logs have been added to the implementation of the experiment in OpenSesame to be able to read out the timing of occurring events afterwards. All not complete log entries were not used for the final evaluation of the experiment. 
 
 = Results
-We examined spatial biases between simultaneously depicting two images using eye-tracking. Participants predominantly made their first fixations on images located to the left of the fixation, following the left view bias described in the literature. In the typical 3/9 o'clock horizontal presentation condition, we observed on average 79.78% left-first fixations ($"CI"_95: [69.41-88.90]%$). We further find a similar sized top-bottom bias towards the top stimulus (81,42%,$"CI"_95:[69.88-90.84]%$). Only when the stimuli were presented in the 1/7 o'clock position, we observed no bias (50.00%,$"CI"_95:[37.50-61.96]%$)).
+We examined spatial biases between simultaneously depicting two images using eye-tracking. Participants predominantly made their first fixations on images located to the left of the fixation, following the left view bias described in the literature. In the typical 3/9 o'clock horizontal presentation condition, we observed on average 79.9% left-first fixations ($"CI"_95: [69.4-88.9]%$). We further find a similar sized top-bottom bias towards the top stimulus (81.4%,$"CI"_95:[69.9-90.8]%$). Only when the stimuli were presented in the 1/7 o'clock position, we observed no bias (50.0%,$"CI"_95:[37.5-62.0]%$)).
 
 #figure(
    image("condition_distribution_results.png", width: 80%),
@@ -130,6 +126,18 @@ We examined spatial biases between simultaneously depicting two images using eye
 )
 
 We did not find obvious patterns in the reaction times across spatial layouts.
+
+= Effect on Power
+A strong left (or right) bias can have strong consequences on th statistical power to find an effect. To highlight this, we simulated binary data from a basic Bradley-Terry model. In the Bradley-Terry model, we use a logistic regression, where 0 is left and 1 is right. Thus, the intercept represents the overall left-right bias. A second coefficient represents an effect coded condition, e.g. whether the left stimulus (-1) or the right stimulus (+1) is a happy (vs. neutral) face. We keep the condition-effect fixed at log-odds of 0.5, and systematically modify the intercept, the left-right bias. For each combination, we calculate 2000 simulations of 200 trials (achieving \~80% power at intercept=0), and test whether the condition-effect is correctly detected as significant, representing the power. 
+
+We find a striking inverse quadratic relationship between the left-right bias and power. Meaning, the stronger the left/right bias, the smaller power. This can be translated to gains in power, which range from being small (\~5%, at \~65% bias) to decent (\~30%, at \~80% bias) to large (\~300% at \~90%).
+
+#figure(
+  image("bias_vs_power.png",width:40%),
+  caption:[
+    left-right bias against power at constant condition effect-size of 0.5. The logistic regression follows the Wilkinson formula `y~1+cond`, with `cond` being effect-coded following the Bradley-Terry model. Dashed lines are reported left-right biases in the literature
+  ]
+)
 
 = Discussion
 We replicate the left-bias spatial bias between two simultaneously displayed figures. We further demonstrate, that diagonal positioning of stimuli can eliminate such a left-bias, increasing the dynamic range available for actual experimental manipulations to influence the early attentional stage. 
