@@ -75,8 +75,6 @@
 #pagebreak()
 = Introduction
 
-new intro 
-
 Human visual perception is inherently selective, with certain visual stimuli capturing attention more readily than others. For both for covert and overt attention – i.e., without or with eye-movements – when presented with competing stimuli at different locations in the visual field, subjects must choose which stimuli to sample first. This sampling priority has been exploited to provide insights into possible ‘attentional biases’ in different conditions such as anxiety, obsessive-compulsive disorder or addiction (reference). In other types of research, even when sampling priority itself is not of interest, an initial bias towards a particular kind of stimuli may result in an overall imbalance in stimuli sampling when the timing of presentation is limited, as typical in psychophysical tasks like the two-alternative forced choice task (2-AFC).
 
 Initial sampling decisions are influenced not only by the stimuli themselves but also by their spatial arrangement, independent of content. Initial overt biases have been well studied for the cases of whole scenes, where an initial tendency to explore the left side of the image, regardless of content, has been repeatedly described (@ossandon_spatial_2014, @spotorno_whats_2025, @foulsham_tom_stable_2018). It is less clear how spatial biases manifest when different stimuli are presented discreetly at different locations. In tasks that investigate attentional biases – by measuring first eye movements or cueing effect as in the dot-probe task, or by testing stimulus detectability, as in the 2-AFC task – two stimuli are usually presented horizontally, one to the left and one to the right of a central fixation. In general, such studies do not report spatial biases and investigators typically average responses across sides. In the rare cases when spatial biases are reported, they have been found to be rather large, with a bias of 65% @hernandez-garcia_global_2020, 68% (Rothkegel et al., 2016) and up to 93% of fixations @cludius_attentional_2019 landing on the stimuli on the left side.  
@@ -137,8 +135,6 @@ We find a striking inverse quadratic relationship between the left-right bias an
 )
 
 = Discussion
-
-new text
 
 We replicated the well-known leftward spatial bias when two images are displayed simultaneously. We further demonstrated that diagonal positioning of stimuli in a 2/7 o'clock configuration can eliminate this left-bias. These results are potentially relevant for all visual research in which multiple stimuli are presented in different locations of the visual field. Even for covert tasks, or when the direction of the first eye movement is itself irrelevant, strong scanning biases can reduce the dynamic range available for experimental manipulation and affect sensitivity measurements. Moreover, these results indicate that our understanding of the mechanisms behind spatial biases remains incomplete. 
 
