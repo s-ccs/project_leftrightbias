@@ -11,6 +11,11 @@
   title: "Overt Spatial Biases in a concurrent two alternatives choice task",
   authors: (
 
+    (name: "Benedikt Ehinger",
+    email: "benedikt.ehinger@vis.uni-stuttgart.de",
+    affiliation: "University of Stuttgart - SimTech",
+    orcid: "0000-0002-6276-3332"),
+
     (name: "Maximilian Dominik Bernhardt",
     email: "\nst190131@stud.uni-stuttgart.de", 
     affiliation: "University of Stuttgart", 
@@ -41,15 +46,11 @@
     affiliation: "University of Hamburg", 
     orcid: "0000-0002-2539-390X"),
 
-    (name: "Benedikt Ehinger", 
-    email: "benedikt.ehinger@vis.uni-stuttgart.de", 
-    affiliation: "University of Stuttgart - SimTech", 
-    orcid: "0000-0002-6276-3332"),
   ),
   // Insert your abstract after the colon, wrapped in brackets.
   // Example: `abstract: [This is my abstract...]`
   abstract: [   
-   A common task to investigate early visual attention is to provide participants with a choice between two stimuli. When such choice tasks allow for eye-movements to assess overt attention, reports emerged that indicated a spatial bias towards saccading first to the left stimulus, ranging from biases of \~65% up to \~90%. Here, we replicate this finding and extend it to non-horizontal stimulus arrangements. In an eye-tracking study (n=23), we (1) replicate the left-right bias with \~80% left-preference, (2) describe a novel vertical bias with an \~80% up-preference, and (3) find a specific diagonal placement of the stimuli that shows no spatial bias. This reduced bias allows to improve the dynamic range (and hence statistical power) in the study of attentional effects. Based on a Bradley-Terry logistic regression simulation, we theoretically could gain small (\~5%, at \~65% bias) to decent (\~30%, at \~80% bias) to large (\~300% at \~90% bias) power improvements — simply by changing the spatial arrangement of the two stimuli. In summary, we provide a better description of spatial biases between two stimuli and present a practical modification to the two choice paradigm that can substantially improve the power of visual attention studies.
+   A common task to investigate early visual attention is to provide participants with a choice between two stimuli and to measure which they fixate first. However, the sensitivity of these tasks is severely limited due to strong horizontal biases, usually to the left (at least in speakers of languages written left-to-right), ranging from \~65% up to \~90% preference to one side in the absence of other differences. Here, we replicate this finding and extend it to non-horizontal stimulus arrangements. In an eye-tracking study (N=23), we (1) replicate the left-right bias in speakers of German with a \~80% left-preference, (2) describe a novel vertical bias with an \~80% top-preference, and (3) find a specific diagonal placement of the stimuli in which these biases cancel out such that there is overall no spatial bias. This stimulus arrangement improves the dynamic range, and hence statistical power, in the study of attentional effects. Based on a Bradley-Terry logistic regression simulation, we could gain small (\~5%, at \~65% bias) to decent (\~30%, at \~80% bias) to large (\~300% at \~90% bias) power improvements, simply by changing the spatial arrangement of the two stimuli. In summary, we provide a better description of spatial biases between two stimuli and present an easy practical modification to the two choice paradigm that can substantially improve the power of visual attention studies.
   ],
   keywords: ("left-right bias", "spatial bias", "2-AFC", "eye tracking", "attention"),
   date: "4th December, 2024",
