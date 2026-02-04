@@ -154,7 +154,7 @@ We find a inverse quadratic relationship between the left-right bias and power (
 #figure(
     image("2026-02-03_sim-results.svg",width:100%),
     caption:[
-        A) simulations at different left/right biases (x-axis). To follow the example of the text, the orange results would be average responses to a happy face on the right, blue to one on the left, with a task to identify the happy face. Already here one can appreciate the larger difference in %-points at a 50:50 bias, compared to more extreme bias values. B) Left-right bias against statistical power while varying the effect. At log-odds of 0.5 we achieve 80% power when no left/right bias exists. If bias increases to either side, we can see a drastic decrease in statistical power. C) This decrease of power can be re-interpreted as an increase in power, if one would eliminate the left/right bias (log-y-scale). E.g. for a bias of 0.1 (90% to the left), one would expect a 3x power increase if the bias could be changed to 0.5 (50% to the left).
+        A) Simulations at different left/right biases (x-axis). To follow the example of the text, the orange results would be average responses to a happy face on the right, blue to one on the left, with a task to identify the happy face. Already here one can appreciate the larger difference in %-points at a 50:50 bias, compared to more extreme bias values. B) Left-right bias against statistical power while varying the effect. At log-odds of 0.5 we achieve 80% power when no left/right bias exists. If bias increases to either side, we can see a drastic decrease in statistical power. C) This decrease of power can be re-interpreted as an increase in power, if one would eliminate the left/right bias (log-y-axis-scale for visualization purposes). E.g. for a bias of 0.1 (90% to the left), one would expect a 3x power increase if the bias could be changed to 0.5 (50% to the left).
     ]
 ) <fig:power>
 
@@ -211,8 +211,6 @@ The project was conducted as a semester project of the "Acquisition and Analysis
 - #underline[Maximilian Bernhardt]: Conceptualization; Methodology; Software; Formal analysis; Data Curation; Writing - Original Draft; Visualization
 - #underline[Simon Enkel]: Conceptualization; Methodology; Software; Formal analysis; Data Curation; Writing - Original Draft; Visualization
 - #underline[Claudius Hilser]: Conceptualization; Methodology; Software; Formal analysis; Data Curation; Writing - Original Draft; Visualization
-- #underline[Patrick Ebner]: Conceptualization; Methodology; Software; Formal analysis Data Curation; Writing - Original Draft; Visualization
-- #underline[Enno Schwenk]: Conceptualization; Methodology; Software; Formal analysis; Data Curation; Writing - Original Draft; Visualization
 - #underline[José Ossandon]: Writing - Review & Editing
 - #underline[Judith Schepers]: Conceptualization; Analysis; Writing - Review & Editing
 - #underline[Titus von der Malsburg]: Conceptualization; Analysis; Writing - Review & Editing; Funding acquisition
