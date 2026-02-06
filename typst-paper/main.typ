@@ -184,8 +184,10 @@ In summary, we offer a simple spatial location modification which can effectivel
 @durgin_upper-left_2008 found an upper-left bias
 
 
-== Relation to dot-probe task
+== Implications for dot-probe task
 The popular dot-probe task is commonly used in clinical settings to investigate attentional biases. They briefly present two stimuli left and right of the fixation cross. They typically do not use eye-tracking, thus to approximate attention deployment, they cannot use first fixation location, but rather present a probe at one of the locations. This probe is supposedly faster processed (and thus reaction is faster), if attention is already employed at that location, allowing for inference to the underlying experimental manipulations.
+
+== Implications for visual world paradigm?
 
 */
 
