@@ -11,7 +11,7 @@
   title: "A simple spatial bias modification to increase statistical power in concurrent two alternatives choice tasks",
   authors: (
 
-    (name: "Benedikt Ehinger",
+    (name: "Benedikt Ehinger‡",
     email: "benedikt.ehinger@vis.uni-stuttgart.de",
     affiliation: "University of Stuttgart - SimTech",
     orcid: "0000-0002-6276-3332"),
@@ -55,7 +55,7 @@
       A common task to investigate early visual attention is to provide participants with a choice between two stimuli and to measure which they fixate first. However, the sensitivity of these tasks is severely limited due to strong horizontal biases, usually to the left (at least in speakers of languages written left-to-right), ranging from $\~65%$ up to $\~90%$ preference to one side in the absence of other differences. Schütz (2014) extended this finding to non-horizontal stimulus arrangements, showing a bias towards $~110°$ upwards eye movements. Here, we replicate these findings and discuss their implications for experimental design in choice tasks. In an eye-tracking study ($N=23$), we (1) replicate the left-right bias in speakers of German with a $\~80%$ left-preference, (2) replicate the vertical bias with an $\~80%$ top-preference, and (3) find a specific diagonal placement of the stimuli in which these biases cancel out such that there is overall no spatial bias at all. This stimulus arrangement improves the dynamic range, and statistical power, when studying attentional effects. Based on a Bradley-Terry logistic regression simulation, we found potential power improvements ranging from small ($\~5%$, at $\~65%$ bias) to decent ($\~30%$, at $\~80%$ bias) to large ($\~300%$ at $\~90%$ bias), simply by changing the spatial arrangement of the two stimuli.
   ],
   keywords: ("left-right bias", "spatial bias", "2-AFC", "eye tracking", "attention"),
-  date: "* contributed equally - 2nd February, 2026", 
+  date: "‡ corresponding author; * contributed equally - 2nd February, 2026",
 ) 
 
 // set spellcheck language
