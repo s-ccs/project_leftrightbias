@@ -7,6 +7,16 @@
 #set par.line(numbering: n => text(size: 6pt)[#n])
 // #set par.line(numbering: "1")
 //-> will work in next release ("soon")
+
+// 1.5 line spacing (Typst default leading is 0.65em; 1em approximates 1.5 spacing)
+#set par(leading: 1em)
+
+// Page numbering
+#set page(numbering: "1")
+
+// Line numbering (uncomment and ensure it is active)
+#set par.line(numbering: n => text(size: 6pt)[#n])
+
 #show: arkheion.with(
   title: "A simple spatial bias modification to increase statistical power in concurrent two alternatives choice tasks",
   authors: (
@@ -56,7 +66,13 @@
   ],
   keywords: ("left-right bias", "spatial bias", "2-AFC", "eye tracking", "attention"),
   date: "‡ corresponding author; * contributed equally - 2nd February, 2026",
-) 
+)
+
+#v(2em)
+*Funding Information:* Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
+
+*Commercial Relationships Disclosures:* The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
+
 
 // set spellcheck language
 #set text(lang: "en", region: "US")
@@ -122,7 +138,9 @@ After removing all trials with reaction times larger than 2s (e.g., because subj
 
 = Results
 
-@fig:results shows the spatial bias for each of the six arrangements of stimulus pairs and reaction times for all 12 positions. Participants predominantly made their first fixation on images located to the left of the fixation, consistent with the left bias described in the literature. In the typical 9/3 o'clock horizontal presentation condition, we observed on average 80% left-first fixations ($"CI"_95: [68-90]%$). We further found a similar sized top bias (81%,$"CI"_95:[70-91]%$). Only when the stimuli were presented in the 7/1 o'clock position, we observed no bias (50%,$"CI"_95:[38-62]%$)).
+@fig:results shows the spatial bias for each of the six arrangements of stimulus pairs and reaction times for all 12 positions. Participants predominantly made their first fixation on images located to the left of the fixation, consistent with the left bias described in the literature.
+In the typical 9/3 o'clock horizontal presentation condition, we observed on average 80% left-first fixations (95% CI $[68, 90]%$). We further found a similar sized top bias (81%, 95% CI $[70, 91]%$). Only when the stimuli were presented in the 7/1 o'clock position, we observed no bias (50%, 95% CI $[38, 62]%$).
+
 
 #import "@preview/subpar:0.2.2"
 
@@ -178,8 +196,13 @@ Scanning, or overt attentional, biases have been mainly studied in free-viewing 
 
 There are several limitations of this study. While we clearly replicated the top-left bias @schutz_interindividual_2014, we do not show direct evidence that this effect is not solely the result of our experimental design of using several spatial arrangements in the same experiment, and that the bias is indeed reduced if the top-right/bottom-left arrangement when used in isolation. Some indirect evidence exists, as e.g. @cludius_attentional_2019 and @muller_no_2025 tested attentional biases of the same OCD-population, the former with left-right (93% bias), the latter with a 45° top-right/bottom-left arrangement (63%). Unfortunately, they used different setups and stimuli allowing general variance in effect due to other factors to explain this difference. This general variance is the second main limitation. The variance in reported left-right bias strength ranges from 60% to over 90%, where the originating factors remain undescribed. These factors could range from inter-population differences, instructions, perceived boredom of the task, stimulus durations, eccentricities, stimulus sizes or material, to name a few. In what ways our proposed diagonal placement interacts with these potential undescribed effects remains open.
 
-
 In summary, we offer a simple spatial location modification which can effectively reduce the spatial bias of attention in participants. We show that such a reduced spatial bias can translate to non-negligible practical gains in statistical power.
+
+= Conclusions
+
+Strong horizontal and vertical spatial biases in concurrent two-alternative choice tasks significantly constrain measurement sensitivity and reduce statistical power.  Arranging stimuli in a diagonal 1/7 o'clock configuration effectively neutralizes both the leftward and upward scanning biases.  Adopting this straightforward spatial modification eliminates baseline spatial preferences, thereby maximizing statistical power and improving the reliability of visual attention measurements.
+
+
 /* things to still add
 @durgin_upper-left_2008 found an upper-left bias
 
@@ -191,10 +214,9 @@ The popular dot-probe task is commonly used in clinical settings to investigate 
 
 */
 
-
-= Conflicts of Interest
-
-The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
+// Moved to front page:
+// = Conflicts of Interest
+// The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
 
 
 = Data and Code Availability
@@ -203,7 +225,9 @@ All data and code are publicly available at https://doi.org/10.5281/zenodo.18370
 
 
 = Acknowledgments
-We want to acknowledge and thank Patrick Ebner and Enno Schwenk for their contributions to the initial student project. They decided not to continue on writing this research paper.
+The authors acknowledge and thank Patrick Ebner and Enno Schwenk for their contributions to the initial student project.
+// They decided not to continue on writing this research paper.
+
 
 = Author Contributions
 
@@ -217,11 +241,9 @@ The project was conducted as a semester project of the "Acquisition and Analysis
 - #underline[Judith Schepers]: Conceptualization; Analysis; Writing - Review & Editing
 - #underline[Titus von der Malsburg]: Conceptualization; Analysis; Writing - Review & Editing; Funding acquisition
 
-
-
-= Funding
-
-Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
+// Moved to front page:
+// = Funding
+// Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
 
 #set par(justify: true, first-line-indent: 0pt);
 
