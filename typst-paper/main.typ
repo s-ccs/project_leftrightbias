@@ -41,7 +41,7 @@
     affiliation: "University of Stuttgart", 
     orcid: "0000-0002-6276-3332"),
     
-    (name: "José Ossandon", 
+    (name: "José P. Ossandón",
     email: "jose.ossandon@uni-hamburg.de", 
     affiliation: "University of Hamburg", 
     orcid: "0000-0002-2539-390X"),
