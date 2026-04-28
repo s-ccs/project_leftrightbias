@@ -5,11 +5,11 @@
 
 #set page(paper: "a4", margin: (left: 10mm, right: 10mm, top: 12mm, bottom: 15mm))
 // Line numbering (uncomment and ensure it is active)
-// #set par.line(numbering: n => text(size: 6pt)[#n])
+#set par.line(numbering: n => text(size: 6pt)[#n])
 // 1.5 line spacing (Typst default leading is 0.65em; 1em approximates 1.5 spacing)
-// #set par(leading: 1em)
+#set par(leading: 1em)
 // Page numbering
-// #set page(numbering: "1")
+#set page(numbering: "1")
 
 // set spellcheck language
 #set text(lang: "en", region: "US")
@@ -77,10 +77,10 @@
   date: "‡ corresponding author; * contributed equally - 2nd February, 2026",
 )
 
-// #v(2em)
-// *Funding Information:* Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
+#v(2em)
+*Funding Information:* Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
 
-// *Commercial Relationships Disclosures:* The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
+*Commercial Relationships Disclosures:* The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
 
 // #pagebreak()
 
@@ -228,10 +228,6 @@ The project was conducted as a semester project of the "Acquisition and Analysis
 - #underline[José Ossandon]: Writing - Review & Editing
 - #underline[Judith Schepers]: Conceptualization; Analysis; Writing - Review & Editing
 - #underline[Titus von der Malsburg]: Conceptualization; Analysis; Writing - Review & Editing; Funding acquisition
-
-*Funding Information:* Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
-
-*Commercial Relationships Disclosures:* The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
 
 
 // Moved to front page:
