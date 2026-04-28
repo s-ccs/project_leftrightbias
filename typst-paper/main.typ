@@ -3,13 +3,12 @@
 #import "@preview/equate:0.2.1": equate
 #import "@preview/wrap-it:0.1.0": wrap-content
 
-#set page(paper: "a4", margin: (left: 10mm, right: 10mm, top: 12mm, bottom: 15mm))
+#set page(paper: "a4", margin: 1in)
 // Line numbering (uncomment and ensure it is active)
 #set par.line(numbering: n => text(size: 6pt)[#n])
+
 // 1.5 line spacing (Typst default leading is 0.65em; 1em approximates 1.5 spacing)
-#set par(leading: 1em)
-// Page numbering
-#set page(numbering: "1")
+// #set par(leading: 1em)
 
 // set spellcheck language
 #set text(lang: "en", region: "US")
@@ -17,14 +16,37 @@
 // figure caption alighment
 #show figure.caption: set align(center)
 
-//#elements.float(align: bottom, [\*Corresponding author]) 
+// #elements.float(align: bottom, [\*Corresponding author]) 
 #set figure(gap: 0.5em) /* Gap between figure and caption */
 #show figure: set block(inset: (top: 0.5em, bottom: 1.5em)) /* Gap between top/ bottom of figure and body text */
 
-//#show: equate.with(breakable: false, sub-numbering: true) /* Needed for multi line equations */
+// #show: equate.with(breakable: false, sub-numbering: true) /* Needed for multi line equations */
 #set math.equation(numbering: "(1.1)")
 
-#set heading(numbering: "1." )
+// Configure APA-compliant header: running head flush left, page number flush right.
+#set page(
+  header: context {
+    grid(
+      columns: (1fr, 1fr),
+      align(left)[SPATIAL BIAS MODIFICATION IN 2-AFC TASKS],
+      align(right)[#counter(page).display("1")]
+    )
+  }
+)
+
+// Remove heading numbering. Center Level 1 headings. Align Level 2 headings flush left.
+#set page(footer: none)
+#show heading.where(level: 1): set align(center)
+#show heading.where(level: 2): set align(left)
+
+// Format figure captions: flush left, bold "Figure X" on the first line, italicized title on the second.
+#show figure.caption: set align(left)
+#show figure.caption: it => block(spacing: 1.5em)[
+  #text(weight: "bold")[#it.supplement #it.counter.display()]\
+  #text(style: "italic")[#it.body]
+]
+
+#show heading: set heading(numbering: none)
 
 #show: arkheion.with(
   title: "A simple spatial bias modification to increase statistical power in concurrent two alternatives choice tasks",
@@ -82,7 +104,8 @@
 
 *Commercial Relationships Disclosures:* The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
 
-// #pagebreak()
+#pagebreak()
+#set par(leading: 1.5em, justify: false, first-line-indent: 0.5in)
 
 = Introduction
 
@@ -134,6 +157,7 @@ After removing all trials with reaction times larger than 2s (e.g., because subj
 @fig:results shows the spatial bias for each of the six arrangements of stimulus pairs and reaction times for all 12 positions. Participants predominantly made their first fixation on images located to the left of the fixation, consistent with the left bias described in the literature.
 In the typical 9/3 o'clock horizontal presentation condition, we observed on average 80% left-first fixations (95% CI $[68, 90]%$). We further found a similar sized top bias (81%, 95% CI $[70, 91]%$). Only when the stimuli were presented in the 7/1 o'clock position, we observed no bias (50%, 95% CI $[38, 62]%$).
 
+We found that not only were the right/bottom (3 to 6 o'clock) stimuli less often chosen as the first saccade target, but when they were chosen, the reaction time generally appeared considerably longer compared to the opposite positions. Caution is appropriate though, as in the locations four, five, six, only very few trials per subject existed, and for some subjects even none.
 
 #import "@preview/subpar:0.2.2"
 
@@ -153,8 +177,6 @@ In the typical 9/3 o'clock horizontal presentation condition, we observed on ave
   ],
 )
 */
-
-We found that not only were the right/bottom (3 to 6 o'clock) stimuli less often chosen as the first saccade target, but when they were chosen, the reaction time generally appeared considerably longer compared to the opposite positions. Caution is appropriate though, as in the locations four, five, six, only very few trials per subject existed, and for some subjects even none.
 
 = Effect on Power
 
@@ -212,13 +234,17 @@ The popular dot-probe task is commonly used in clinical settings to investigate 
 
 
 #v(2em)
+#set par(first-line-indent: 0pt)
+
 *Data and Code Availability:*
 All data and code are publicly available at https://doi.org/10.5281/zenodo.18370171
 
+#v(1em)
 *Acknowledgments:*
 The authors acknowledge and thank Patrick Ebner and Enno Schwenk for their contributions to the initial student project.
 // They decided not to continue on writing this research paper.
 
+#v(1em)
 *Author Contributions:*
 The project was conducted as a semester project of the "Acquisition and Analysis of Eye-Tracking Data" M.Sc. course at the University of Stuttgart.
 - #underline[Benedikt Ehinger]: Conceptualization; Methodology; Software; Formal analysis; Resources; Supervision; Writing - Review & Editing; Visualization; Funding acquisition
@@ -234,8 +260,8 @@ The project was conducted as a semester project of the "Acquisition and Analysis
 // = Funding
 // Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
 
-#set par(justify: true, first-line-indent: 0pt);
-
+// Ensure the bibliography maintains a hanging indent without first-line indentation.
+#show bibliography: set par(first-line-indent: 0pt, hanging-indent: 0.5in)
 
 // send behinger an email with your zotero to get access to the group
 #bibliography(title:"Bibliography", style:"american-psychological-association", "zotero_shared.bib")
