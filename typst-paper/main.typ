@@ -4,18 +4,27 @@
 #import "@preview/wrap-it:0.1.0": wrap-content
 
 #set page(paper: "a4", margin: (left: 10mm, right: 10mm, top: 12mm, bottom: 15mm))
-#set par.line(numbering: n => text(size: 6pt)[#n])
-// #set par.line(numbering: "1")
-//-> will work in next release ("soon")
-
-// 1.5 line spacing (Typst default leading is 0.65em; 1em approximates 1.5 spacing)
-#set par(leading: 1em)
-
-// Page numbering
-#set page(numbering: "1")
-
 // Line numbering (uncomment and ensure it is active)
-#set par.line(numbering: n => text(size: 6pt)[#n])
+// #set par.line(numbering: n => text(size: 6pt)[#n])
+// 1.5 line spacing (Typst default leading is 0.65em; 1em approximates 1.5 spacing)
+// #set par(leading: 1em)
+// Page numbering
+// #set page(numbering: "1")
+
+// set spellcheck language
+#set text(lang: "en", region: "US")
+
+// figure caption alighment
+#show figure.caption: set align(center)
+
+//#elements.float(align: bottom, [\*Corresponding author]) 
+#set figure(gap: 0.5em) /* Gap between figure and caption */
+#show figure: set block(inset: (top: 0.5em, bottom: 1.5em)) /* Gap between top/ bottom of figure and body text */
+
+//#show: equate.with(breakable: false, sub-numbering: true) /* Needed for multi line equations */
+#set math.equation(numbering: "(1.1)")
+
+#set heading(numbering: "1." )
 
 #show: arkheion.with(
   title: "A simple spatial bias modification to increase statistical power in concurrent two alternatives choice tasks",
@@ -68,28 +77,12 @@
   date: "‡ corresponding author; * contributed equally - 2nd February, 2026",
 )
 
-#v(2em)
-*Funding Information:* Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
+// #v(2em)
+// *Funding Information:* Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
 
-*Commercial Relationships Disclosures:* The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
+// *Commercial Relationships Disclosures:* The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
 
-
-// set spellcheck language
-#set text(lang: "en", region: "US")
-
-// figure caption alighment
-#show figure.caption: set align(center)
-
-//#elements.float(align: bottom, [\*Corresponding author]) 
-#set figure(gap: 0.5em) /* Gap between figure and caption */
-#show figure: set block(inset: (top: 0.5em, bottom: 1.5em)) /* Gap between top/ bottom of figure and body text */
-
-//#show: equate.with(breakable: false, sub-numbering: true) /* Needed for multi line equations */
-#set math.equation(numbering: "(1.1)")
-
-#set heading(numbering: "1." )
-
-#pagebreak()
+// #pagebreak()
 
 = Introduction
 
@@ -200,8 +193,7 @@ In summary, we offer a simple spatial location modification which can effectivel
 
 = Conclusions
 
-Strong horizontal and vertical spatial biases in concurrent two-alternative choice tasks significantly constrain measurement sensitivity and reduce statistical power.  Arranging stimuli in a diagonal 1/7 o'clock configuration effectively neutralizes both the leftward and upward scanning biases.  Adopting this straightforward spatial modification eliminates baseline spatial preferences, thereby maximizing statistical power and improving the reliability of visual attention measurements.
-
+Strong horizontal and vertical spatial biases in concurrent two-alternative choice tasks significantly constrain measurement sensitivity and reduce statistical power.  Arranging stimuli in a diagonal 1/7 o'clock configuration effectively neutralizes both the leftward and upward scanning biases.  Adopting this straightforward spatial modification eliminates baseline spatial preferences, thereby maximizing statistical power and improving the reliability of visual attention measurements.  More generally, our work shows that, after decades of research on visual attention, there is still substantial potential to refine foundational experimental paradigms to yield significant improvements in data quality and statistical power.
 
 /* things to still add
 @durgin_upper-left_2008 found an upper-left bias
@@ -219,20 +211,16 @@ The popular dot-probe task is commonly used in clinical settings to investigate 
 // The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
 
 
-= Data and Code Availability
-
+#v(2em)
+*Data and Code Availability:*
 All data and code are publicly available at https://doi.org/10.5281/zenodo.18370171
 
-
-= Acknowledgments
+*Acknowledgments:*
 The authors acknowledge and thank Patrick Ebner and Enno Schwenk for their contributions to the initial student project.
 // They decided not to continue on writing this research paper.
 
-
-= Author Contributions
-
+*Author Contributions:*
 The project was conducted as a semester project of the "Acquisition and Analysis of Eye-Tracking Data" M.Sc. course at the University of Stuttgart.
-
 - #underline[Benedikt Ehinger]: Conceptualization; Methodology; Software; Formal analysis; Resources; Supervision; Writing - Review & Editing; Visualization; Funding acquisition
 - #underline[Maximilian Bernhardt]: Conceptualization; Methodology; Software; Formal analysis; Data Curation; Writing - Original Draft; Visualization
 - #underline[Simon Enkel]: Conceptualization; Methodology; Software; Formal analysis; Data Curation; Writing - Original Draft; Visualization
@@ -240,6 +228,11 @@ The project was conducted as a semester project of the "Acquisition and Analysis
 - #underline[José Ossandon]: Writing - Review & Editing
 - #underline[Judith Schepers]: Conceptualization; Analysis; Writing - Review & Editing
 - #underline[Titus von der Malsburg]: Conceptualization; Analysis; Writing - Review & Editing; Funding acquisition
+
+*Funding Information:* Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
+
+*Commercial Relationships Disclosures:* The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
+
 
 // Moved to front page:
 // = Funding
