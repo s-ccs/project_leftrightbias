@@ -3,51 +3,10 @@
 #import "@preview/equate:0.2.1": equate
 #import "@preview/wrap-it:0.1.0": wrap-content
 
-#set page(paper: "a4", margin: 1in)
-// Line numbering (uncomment and ensure it is active)
+#set page(paper: "a4", margin: (left: 10mm, right: 10mm, top: 12mm, bottom: 15mm))
 #set par.line(numbering: n => text(size: 6pt)[#n])
-
-// 1.5 line spacing (Typst default leading is 0.65em; 1em approximates 1.5 spacing)
-// #set par(leading: 1em)
-
-// set spellcheck language
-#set text(lang: "en", region: "US")
-
-// figure caption alighment
-#show figure.caption: set align(center)
-
-// #elements.float(align: bottom, [\*Corresponding author]) 
-#set figure(gap: 0.5em) /* Gap between figure and caption */
-#show figure: set block(inset: (top: 0.5em, bottom: 1.5em)) /* Gap between top/ bottom of figure and body text */
-
-// #show: equate.with(breakable: false, sub-numbering: true) /* Needed for multi line equations */
-#set math.equation(numbering: "(1.1)")
-
-// Configure APA-compliant header: running head flush left, page number flush right.
-#set page(
-  header: context {
-    grid(
-      columns: (1fr, 1fr),
-      align(left)[SPATIAL BIAS MODIFICATION IN 2-AFC TASKS],
-      align(right)[#counter(page).display("1")]
-    )
-  }
-)
-
-// Remove heading numbering. Center Level 1 headings. Align Level 2 headings flush left.
-#set page(footer: none)
-#show heading.where(level: 1): set align(center)
-#show heading.where(level: 2): set align(left)
-
-// Format figure captions: flush left, bold "Figure X" on the first line, italicized title on the second.
-#show figure.caption: set align(left)
-#show figure.caption: it => block(spacing: 1.5em)[
-  #text(weight: "bold")[#it.supplement #it.counter.display()]\
-  #text(style: "italic")[#it.body]
-]
-
-#show heading: set heading(numbering: none)
-
+// #set par.line(numbering: "1")
+//-> will work in next release ("soon")
 #show: arkheion.with(
   title: "A simple spatial bias modification to increase statistical power in concurrent two alternatives choice tasks",
   authors: (
@@ -72,7 +31,7 @@
     affiliation: "University of Stuttgart", 
     orcid: "0000-0002-6276-3332"),
     
-    (name: "José P. Ossandón",
+    (name: "José Ossandon", 
     email: "jose.ossandon@uni-hamburg.de", 
     affiliation: "University of Hamburg", 
     orcid: "0000-0002-2539-390X"),
@@ -97,15 +56,27 @@
   ],
   keywords: ("left-right bias", "spatial bias", "2-AFC", "eye tracking", "attention"),
   date: "‡ corresponding author; * contributed equally - 2nd February, 2026",
-)
+) 
 
-#v(2em)
-*Funding Information:* Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
+// set spellcheck language
+#set text(lang: "en", region: "US")
 
-*Commercial Relationships Disclosures:* The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
+// figure caption alighment
+#show figure.caption: set align(center)
+
+//#elements.float(align: bottom, [\*Corresponding author]) 
+#set figure(gap: 0.5em) /* Gap between figure and caption */
+#show figure: set block(inset: (top: 0.5em, bottom: 1.5em)) /* Gap between top/ bottom of figure and body text */
+
+//#show: equate.with(breakable: false, sub-numbering: true) /* Needed for multi line equations */
+#set math.equation(numbering: "(1.1)")
+
+#set heading(numbering: "1." )
+
+
+#let mark(x) = text(fill: red,x)
 
 #pagebreak()
-#set par(leading: 1.5em, justify: false, first-line-indent: 0.5in)
 
 = Introduction
 
@@ -116,7 +87,7 @@ In this study, we attempted to replicate and further investigate first-movement 
 
 The disregard for spatial biases is likely based on the belief that experimental balancing of stimuli across locations controls for any confounding effect of spatial biases. Although this belief is often correct, a strong spatial bias can potentially diminish the operational range for revealing attentional biases of interest. This is also true for non-attentional tasks in which exposure time to stimuli is limited. For instance in the case of a 2-AFC task, a strong left bias combined with limited exposure time could result in reduced sensitivity due to the signal-detection theory “Position-bias” @wickens_elementary_2001, or in decisions based solely on sampling the left stimulus, effectively transforming the 2-AFC task in a yes/no task, which has different bias and detection properties @macmillan_detection_2005.
 
-To investigate this initial scanning spatial bias in greater detail, we positioned stimuli opposite to a central fixation target, arranged in six different positions. The stimuli were artificially generated textures, largely devoid of content. Nevertheless, due to a distractor-detection task, subjects were encouraged to look at both stimuli. To preview our results, we replicated the known initial left bias and found that a diagonal placement, at 1/7 o'clock, resulted in no overall spatial bias, whereas all other arrangements were biased towards the left or to the top in case of the 6/12 o'clock arrangement. We further provide simulation evidence on how strongly spatial biases can affect statistical power and bias sensitivity measurements.
+To investigate this initial scanning spatial bias in greater detail, we positioned stimuli opposite to a central fixation target, arranged in six different positions. The stimuli were artificially generated textures, largely devoid of content. Nevertheless, due to a distractor-detection task, subjects were encouraged to look at both stimuli. To preview our results, we replicated the known initial left bias and found that a diagonal placement, at #mark[60° / -120°], resulted in no overall spatial bias, whereas all other arrangements were biased towards the left or to the top in case of the #mark[90° / -90°] arrangement. We further provide simulation evidence on how strongly spatial biases can affect statistical power and bias sensitivity measurements.
 
 
 = Methods
@@ -125,7 +96,7 @@ To investigate this initial scanning spatial bias in greater detail, we position
 A total of 23 participants (age range 20–60, individual age was not recorded) 3 female, 20 male, 0 diverse) were included in the study. All participants were raised in a culture where the Latin script is utilized and text is written from left to right.
 
 == Materials
-We used gray scale, high contrast texture stimuli (see @fig:stimuli). All stimuli were created with stable diffusion using Leonardo.AI and ChatGPT, with a size of 1024×1024 px. To create the stimuli, the following prompts were used: “Please generate simple images of different textures without striking content in black and white”, “Please generate simple images of different natural textures like wood or grain without striking content in black and white.”
+We used gray scale, high contrast texture stimuli (see @fig:stimuli). All stimuli were created with stable diffusion using Leonardo.AI and ChatGPT, with a size of 1024×1024 px. To create the stimuli, the following prompts were used: “Please generate simple images of different textures without striking content in black and white”, “Please generate simple images of different natural textures like wood or grain without striking content in black and white.” #mark[All 22 stimuli can be found in the appendix (@fig:all_stimuli).]
 
 == Apparatus
 Using Opensesame 4.0 @mathot_opensesame_2012 @mathot_conducting_2022, PyGaze @dalmaijer_pygaze_2014 and PsychoPy @peirce_psychopy2_2019, the stimuli were displayed with 204×204 px with a 28.3'' LCD monitor (Philips Brilliance 241B, resolution: 1920×1080 px, height: 527 mm, width: 296.5 mm) with participants seated 60 cm in front of the screen, resulting in a visual angle of around 3.02 dva per stimulus. To monitor the eye, we used a GazePoint GP3 HD eye-tracker (Gazepoint, Vancouver, Canada) with a sampling rate of 150 Hz.
@@ -140,7 +111,7 @@ To maintain participant focus, an easy distractor detection task was added. On e
 #figure(
     image("stimuli_display.png", width: 80%),
     caption: [
-      Experimental design (left) showing stimuli presented in pairs opposite the fixation cross, with the classical left/right arrangement highlighted in red; example stimuli (right) include polygon and circle distractors.
+      Experimental design (left) showing stimuli presented in pairs opposite the fixation cross, with the classical left/right arrangement highlighted in red; example stimuli (right) include #mark[circle (top row) and polygon (middle and bottom row) distractors].
     ],
 ) <fig:stimuli>
  
@@ -154,10 +125,7 @@ After removing all trials with reaction times larger than 2s (e.g., because subj
 
 = Results
 
-@fig:results shows the spatial bias for each of the six arrangements of stimulus pairs and reaction times for all 12 positions. Participants predominantly made their first fixation on images located to the left of the fixation, consistent with the left bias described in the literature.
-In the typical 9/3 o'clock horizontal presentation condition, we observed on average 80% left-first fixations (95% CI $[68, 90]%$). We further found a similar sized top bias (81%, 95% CI $[70, 91]%$). Only when the stimuli were presented in the 7/1 o'clock position, we observed no bias (50%, 95% CI $[38, 62]%$).
-
-We found that not only were the right/bottom (3 to 6 o'clock) stimuli less often chosen as the first saccade target, but when they were chosen, the reaction time generally appeared considerably longer compared to the opposite positions. Caution is appropriate though, as in the locations four, five, six, only very few trials per subject existed, and for some subjects even none.
+@fig:results shows the spatial bias for each of the six arrangements of stimulus pairs and reaction times for all 12 positions. Participants predominantly made their first fixation on images located to the left of the fixation, consistent with the left bias described in the literature. In the typical #mark[180° / 0°] horizontal presentation condition, we observed on average 80% left-first fixations ($"CI"_95: [68-90]%$). We further found a similar sized top bias (81%,$"CI"_95:[70-91]%$). Only when the stimuli were presented in the #mark[60° / 120°] positions, we observed no bias (50%,$"CI"_95:[38-62]%$)).
 
 #import "@preview/subpar:0.2.2"
 
@@ -165,7 +133,7 @@ We found that not only were the right/bottom (3 to 6 o'clock) stimuli less often
     figure(image("2025-07-24_choice.svg")),
     figure(image("2025-07-17_rt.svg")),
     columns: (1fr, 1fr),
-    caption: [left) Proportion of first fixation to the right for different stimulus arrangements. Gray dots depict means of single subjects. right) Reaction times for the first fixation on individual stimulus positions. Color depicts the number of trials used for averaging within one subject/condition combination. Note the reduced number of trials for locations towards the bottom right. For both plots: blue dots depict 20% winsorized mean, errorbars 95% bootstrapped confidence intervals over the 20% winsorized by-subject means.],
+    caption: [left) Proportion of first fixation to the #mark[right stimulus (the 180° downward stimulus for 90°/180°) for different stimulus arrangements]. Gray dots depict means of single subjects. right) Reaction times for the first fixation on individual stimulus positions. Color depicts the number of trials used for averaging within one subject/condition combination. Note the reduced number of trials for locations towards the bottom right. For both plots: blue dots depict 20% winsorized mean, errorbars 95% bootstrapped confidence intervals over the 20% winsorized by-subject means.],
     label: <fig:results>,
 )
 
@@ -177,6 +145,8 @@ We found that not only were the right/bottom (3 to 6 o'clock) stimuli less often
   ],
 )
 */
+
+We found that not only were the right/bottom #mark[(0° to -90°)] stimuli less often chosen as the first saccade target, but when they were chosen, the reaction time generally appeared considerably longer compared to the opposite positions. Caution is appropriate though, as in the locations #mark[-30°, -60° and -90°] only very few trials per subject existed, and for some subjects even none.
 
 = Effect on Power
 
@@ -194,29 +164,47 @@ We find an inverse quadratic relationship between the left-right bias and power 
 
 = Discussion
 
-We replicated the well-known leftward spatial bias when two images are displayed simultaneously and also demonstrated an equally strong top bias. We further demonstrated that diagonal positioning of stimuli in a 1/7 o'clock configuration can eliminate spatial bias because the left and top bias cancel out in this arrangement. These results are relevant for studies in which multiple stimuli are presented in different locations of the visual field, ranging from two-choice tasks to visual search. Even for covert tasks, or when the direction of the first eye movement is itself irrelevant, strong scanning biases can reduce the dynamic range available for experimental manipulation and affect sensitivity measurements. Moreover, these results indicate that our understanding of the mechanisms behind spatial biases still remains incomplete.
+== Summary
+We replicated the well-known leftward spatial bias when two images are displayed simultaneously and also demonstrated an equally strong top bias. We further demonstrated that diagonal positioning of stimuli in a #mark[60° / 120°] configuration can eliminate spatial bias because the left and top bias cancel out in this arrangement#mark[, at least in our sample]. These results are relevant for studies in which multiple stimuli are presented in different locations of the visual field, ranging from two-choice tasks to visual search. Even for covert tasks, or when the direction of the first eye movement is itself irrelevant, strong scanning biases can reduce the dynamic range available for experimental manipulation and affect sensitivity measurements. Moreover, these results indicate that our understanding of the mechanisms behind spatial biases still remains incomplete.
 
 
 /*
 The following few paragraphs are quite long and elaborate. The central question to me is, whether we really need them / how we edit them to be less prominent.
 */
-Many experimental paradigms relying on discrete, competing spatial stimulation may be affected by spatial biases. This is particularly true for paradigms investigating initial exploration biases as indicators of attentional bias fro specific content. Although  researchers take care to balance stimuli across spatial locations, we show here that a strong spatial bias can nevertheless greatly reduce statistical power, thus limiting research validity, interpretability, and reproducibility. Research on free viewing biases has shown that the initial left bias leads to an overall bias to the left lasting up to 1.5 seconds @ossandon_spatial_2014. For other types of research, where eye movements are not themselves of interest or measured, the effect of a spatial bias on measurement and experimental power can still be significant, especially in the case brief presentations times, as is typically the case in psychophysical tasks like the 2-AFC task. In this important case, a strong sampling bias can distort sensitivity measurements and even effectively change the nature of the task. The results of our experiment suggest that, when eye movements are allowed, initial scanning biases should always be reported, and that a 1/7 o'clock configuration might be optimal for two-stimuli tasks.
- 
+== Relation to other spatial biases
+Many experimental paradigms relying on discrete, competing spatial stimulation may be affected by spatial biases. This is particularly true for paradigms investigating initial exploration biases as indicators of attentional bias fro specific content. Although  researchers take care to balance stimuli across spatial locations, we show here that a strong spatial bias can nevertheless greatly reduce statistical power, thus limiting research validity, interpretability, and reproducibility. Research on free viewing biases has shown that the initial left bias leads to an overall bias to the left lasting up to 1.5 seconds @ossandon_spatial_2014. For other types of research, where eye movements are not themselves of interest or measured, the effect of a spatial bias on measurement and experimental power can still be significant, especially in the case brief presentations times, as is typically the case in psychophysical tasks like the 2-AFC task. In this important case, a strong sampling bias can distort sensitivity me  asurements and even effectively change the nature of the task. The results of our experiment suggest that, when eye movements are allowed, initial scanning biases should always be reported, and that a #mark[60° / 120°] configuration might be optimal for two-stimuli tasks.
+
+== Average vs. individual bias?
+#mark[More data is needed to clearly specify the optimal direction of the configuration. @schutz_interindividual_2014 finds the strongest bias at a group level mean of 110°, whereas we find it at ~145° (we replicated this bias with 10 more subjects to ~135°, unpublished). One potential influencing difference is that @schutz_interindividual_2014 only allowed for a single saccade to the stimulus, whereas we allow later exploration of the second stimulus as well. Further studies need to delineate this difference clearly. 
+
+Notably, the reported bias only reflect the mean bias over all subjects, but there is strong inter-individual variability. In our study, individual variability could result from the comparatively small number of trials (8 trials per condition), which would result in higher variability of the individual bias. This is rather unlikely, e.g. @schutz_interindividual_2014 estimates the bias by fitting the phase of a sine to the data, showing an $R^2>95%$ and high split-half reliability (Spearman-Brown corrected split-half reliability of 0.97) in his study. This indicates to us, that each subject shows a idiosyncratic bias.
+
+Thus, ideally, one would estimate the individual bias of each subject and then position the stimuli in the direction of least bias. In practice, such a calibration could be feasible if the number of trials to estimate the bias can be reduced. But it would remain a technical investment, requiring a calibration phase and stimulus position adjustment for each participant.
+
+Ultimately, if individual biases cannot be accounted for, we think the choice of ~55° (90° rotated to ~145°) is a more reasonable choice to minimize overall group-level bias, than choosing 0°, the default left/right arrangement.]
+
+== What is the mechanism?
 Beyond this methodological relevance, our results also highlight a continued lack of understanding of the mechanisms underlying  attentional and scanning biases. Perceptually, research has found that human performance across diverse tasks follows an horizontal-vertical anisotropy and a vertical meridian asymmetry @himmelberg_polar_2023: Performance is better for stimuli shown along the horizontal meridian compared to obliques or vertical meridians, and within the vertical meridian, better for stimuli in the lower field. However, in these types of perceptual experiments, no perceptual asymmetry within the horizontal meridian, or across diagonals has been found @barbot_asymmetries_2021. Moreover, the perceptual advantage for lower visual field stimuli is at odds with the first fixation bias for upper stimuli reported here.
 
 
 For a variety of tasks in which competing stimuli are presented across the hemifield, covert attentional spatial biases are found for both the horizontal and vertical domain, usually favoring the left hemifield and, depending on the task, upper or lower fields (e.g.,@Jewell2000 @Mattingley1994 @Luh1994a @Nicholls1999 @Buschman2011 @DellaSala2010 @dickinson_spatial_2009 @Du2010). In general, horizontal biases have been attributed to lateralization of visual processing modules between the two brain hemispheres. In this module lateralization hypothesis, a more general role is given to the right lateralization of the attentional network @Corbetta2002@Corbetta2008 , which would explain the overall bias towards the left observed in multiple tasks. However, such brain lateralization explanations fail to account for biases between the upper and lower hemifield, or the absence of a bias in the bottom-left and top-right configuration.
 
-Scanning, or overt attentional, biases have been mainly studied in free-viewing paradigms. Most prominently, free-viewing behavior is initially heavily lateralized to the left  @Foulsham2013 @foulsham_stable_2018 @Nuthmann2014 @ossandon_spatial_2014 @spotorno_whats_2025. This horizontal bias could account for the biases observed here for stimuli on the horizontal meridian and in the top-left quadrant. However, a general left bias cannot explain our main finding of limited or no biases for configurations combining stimuli in the bottom-left and top-right quadrants. Regarding the vertical dimension, an initial downward vertical free-viewing bias has been identified @foulsham_asymmetries_2010, which would predict the opposite result to what is reported here (bias for top stimulus). Even without eye-movements, #cite(<churches_perceptual_2017>, form:"prose") found both horizontal and vertical biases in a task to find the midpoint of a rectangle (a generalisation of a line-bisection task). They show that the two components are uncorrelated, implicating two separate biases. Whereas #cite(<durgin_upper-left_2008>, form:"prose") found a similar top-left bias, but in multiple visual search tasks with many concurrent search items. They explain their result in terms of a default search strategy, implying a single bias. Finally, #cite(<schutz_interindividual_2014>,form:"prose") previously described the same top-left bias, and modelled it using a single cosine-bias, estimating phase and amplitude. Interestingly, no correlation to other spatial biases (motion perception, thumb movement) could be found. In summary, the pattern of results we observed is incompatible with only a spatial left bias as previously described in the free viewing literature, and instead resembles the effects of a diagonal, or two interacting spatial biases.
+Scanning, or overt attentional, biases have been mainly studied in free-viewing paradigms. Most prominently, free-viewing behavior is initially heavily lateralized to the left  @Foulsham2013 @foulsham_stable_2018 @Nuthmann2014 @ossandon_spatial_2014 @spotorno_whats_2025. This horizontal bias could account for the biases observed here for stimuli on the horizontal meridian and in the top-left quadrant. However, a general left bias cannot explain our main finding of limited or no biases for configurations combining stimuli in the bottom-left and top-right quadrants. Regarding the vertical dimension, an initial downward vertical free-viewing bias has been identified @foulsham_asymmetries_2010, which would predict the opposite result to what is reported here (bias for top stimulus). Even without eye-movements, #cite(<churches_perceptual_2017>, form:"prose") found both horizontal and vertical biases in a task to find the midpoint of a rectangle (a generalisation of a line-bisection task). They show that the two components are uncorrelated, implicating two separate biases. Whereas #cite(<durgin_upper-left_2008>, form:"prose") found a similar top-left bias, but in multiple visual search tasks with many concurrent search items. They explain their result in terms of a default search strategy, implying a single bias. Finally, #cite(<schutz_interindividual_2014>,form:"prose") previously described the same top-left bias, and modelled it using a single cosine-bias, estimating phase and amplitude. Interestingly, no correlation to other spatial biases (motion perception, thumb movement) could be found.
 
-There are several limitations of this study. While we clearly replicated the top-left bias @schutz_interindividual_2014, we do not show direct evidence that this effect is not solely the result of our experimental design of using several spatial arrangements in the same experiment, and that the bias is indeed reduced if the top-right/bottom-left arrangement when used in isolation. Some indirect evidence exists, as e.g. @cludius_attentional_2019 and @muller_no_2025 tested attentional biases of the same OCD-population, the former with left-right (93% bias), the latter with a 45° top-right/bottom-left arrangement (63%). Unfortunately, they used different setups and stimuli allowing general variance in effect due to other factors to explain this difference. This general variance is the second main limitation. The variance in reported left-right bias strength ranges from 60% to over 90%, where the originating factors remain undescribed. These factors could range from inter-population differences, instructions, perceived boredom of the task, stimulus durations, eccentricities, stimulus sizes or material, to name a few. In what ways our proposed diagonal placement interacts with these potential undescribed effects remains open.
+In summary, the pattern of results we observed is incompatible with only a spatial left bias as previously described in the free viewing literature, and instead resembles the effects of a diagonal, or two interacting spatial biases.
+
+
+== Limitations
+While we clearly replicated the top-left bias @schutz_interindividual_2014, we do not show direct evidence that this effect is not solely the result of our experimental design of using several spatial arrangements in the same experiment, and that the bias is indeed reduced if the top-right/bottom-left arrangement when used in isolation. Some indirect evidence exists, as e.g. @cludius_attentional_2019 and @muller_no_2025 tested attentional biases of the same OCD-population, the former with left-right (93% bias), the latter with a 45° top-right/bottom-left arrangement (63%). Unfortunately, they used different setups and stimuli allowing general variance in effect due to other factors to explain this difference. 
+
+This general variance is the second main limitation. The variance in reported left-right bias strength ranges from 60% to over 90%, where the originating factors remain undescribed. These factors could range from inter-population differences, instructions, perceived boredom of the task, stimulus durations, eccentricities, stimulus sizes or material, to name a few. In what ways our proposed diagonal placement interacts with these potential undescribed effects remains open.
+
+#mark[Another limitation is that our power simulation is only for one individual, not for the population. Thus it does not account for the variability between subjects. For this, a more complex hierarchical Terry-Bradley Model would need to be estimated, based on e.g. a Logistic Linear Mixed Model.]
+
+== Summary
+
 
 In summary, we offer a simple spatial location modification which can effectively reduce the spatial bias of attention in participants. We show that such a reduced spatial bias can translate to non-negligible practical gains in statistical power.
-
-= Conclusions
-
-Strong horizontal and vertical spatial biases in concurrent two-alternative choice tasks significantly constrain measurement sensitivity and reduce statistical power.  Arranging stimuli in a diagonal 1/7 o'clock configuration effectively neutralizes both the leftward and upward scanning biases.  Adopting this straightforward spatial modification eliminates baseline spatial preferences, thereby maximizing statistical power and improving the reliability of visual attention measurements.  More generally, our work shows that, after decades of research on visual attention, there is still substantial potential to refine foundational experimental paradigms to yield significant improvements in data quality and statistical power.
-
 /* things to still add
 @durgin_upper-left_2008 found an upper-left bias
 
@@ -228,25 +216,24 @@ The popular dot-probe task is commonly used in clinical settings to investigate 
 
 */
 
-// Moved to front page:
-// = Conflicts of Interest
-// The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
+
+= Conflicts of Interest
+
+The authors have no conflicts of interest to declare. All co-authors have seen and agree with the contents of the manuscript, and there is no financial interest to report.
 
 
-#v(2em)
-#set par(first-line-indent: 0pt)
+= Data and Code Availability
 
-*Data and Code Availability:*
 All data and code are publicly available at https://doi.org/10.5281/zenodo.18370171
 
-#v(1em)
-*Acknowledgments:*
-The authors acknowledge and thank Patrick Ebner and Enno Schwenk for their contributions to the initial student project.
-// They decided not to continue on writing this research paper.
 
-#v(1em)
-*Author Contributions:*
+= Acknowledgments
+We want to acknowledge and thank Patrick Ebner and Enno Schwenk for their contributions to the initial student project. They decided not to continue on writing this research paper.
+
+= Author Contributions
+
 The project was conducted as a semester project of the "Acquisition and Analysis of Eye-Tracking Data" M.Sc. course at the University of Stuttgart.
+
 - #underline[Benedikt Ehinger]: Conceptualization; Methodology; Software; Formal analysis; Resources; Supervision; Writing - Review & Editing; Visualization; Funding acquisition
 - #underline[Maximilian Bernhardt]: Conceptualization; Methodology; Software; Formal analysis; Data Curation; Writing - Original Draft; Visualization
 - #underline[Simon Enkel]: Conceptualization; Methodology; Software; Formal analysis; Data Curation; Writing - Original Draft; Visualization
@@ -256,13 +243,23 @@ The project was conducted as a semester project of the "Acquisition and Analysis
 - #underline[Titus von der Malsburg]: Conceptualization; Analysis; Writing - Review & Editing; Funding acquisition
 
 
-// Moved to front page:
-// = Funding
-// Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
 
-// Ensure the bibliography maintains a hanging indent without first-line indentation.
-#show bibliography: set par(first-line-indent: 0pt, hanging-indent: 0.5in)
+= Funding
+
+Funded by Deutsche Forschungsgemeinschaft (DFG, German Research Foundations) in the Emmy Noether Programme - Project-ID 538578433. The authors further thank the International Max Planck Research School for Intelligent Systems (IMPRS-IS) for supporting Judith Schepers.
+
+#set par(justify: true, first-line-indent: 0pt);
+
 
 // send behinger an email with your zotero to get access to the group
 #bibliography(title:"Bibliography", style:"american-psychological-association", "zotero_shared.bib")
 
+
+
+#figure(
+    image("grid.png", width: 80%),
+    caption: [
+      All stimuli used in the experiment.
+    ],
+) <fig:all_stimuli>
+ 
